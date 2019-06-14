@@ -1,7 +1,13 @@
 import React from 'react'
-class Users extends React.Component {
-  render() {
-    return <h1>Users</h1>
-  }
+import {Link} from 'react-router-dom';
+
+const User = (props) => {
+    return (
+        <Link to={'/'+ props.id}>
+            <li>
+                {props.name} 
+            </li>
+        </Link>
+    )
 }
-export default Users
+export default User

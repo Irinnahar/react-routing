@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import Users from './Components/User';
+import Users from './Components/Users';
+import User from './Components/User';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
 
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/' component = {Home} />
           <Route path = '/users' component = {Users} />
           <Route path = '/contact' component = {Contact}/>
+          <Route path = '/:id' component = {User}/>
         </Switch>
       </div>
     </Router>

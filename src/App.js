@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import Users from './Components/User';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // use NavLink for styling active route
+    // use Link for link to the router only
+    <Router>
+      <div className="App">
+        <h2>Welcome to React Router Tutorial</h2>
+        <ul>
+          <li>
+            <NavLink  to='/' exact>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={{
+              pathname : '/users',
+              hash: '#submit',
+              search : '?quick-submit=true'
+            }}>Users</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/contact'}>Contact</NavLink>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path='/' component = {Home} />
+          <Route path = '/users' component = {Users} />
+          <Route path = '/contact' component = {Contact}/>
+        </Switch>
+      </div>
+    </Router>
+
   );
 }
 

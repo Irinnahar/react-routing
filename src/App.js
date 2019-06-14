@@ -7,7 +7,7 @@ import Contact from './Components/Contact';
 import Home from './Components/Home';
 
 function App() {
-  return (
+  return ( 
     // use NavLink for styling active route
     // use Link for link to the router only
     <Router>
